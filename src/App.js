@@ -1,6 +1,7 @@
 import "./App.css";
 import { Component } from "react";
 import { Cardlist } from "./components/card-list/card-list.component";
+import { SearchBox } from "./components/search-box/search-box.component";
 
 //function App() {
 class App extends Component {
@@ -35,7 +36,14 @@ class App extends Component {
 
     return (
       <div className="App">
-        <input 
+        <h1>Monsters Rolodex</h1>
+        <SearchBox 
+          placeholder="Search Monsters" 
+          handleChange={e => {
+            this.setState({searchField: e.target.value});
+          }
+        }/>
+        {/* <input 
           type='text' 
           placeholder='Search Monsters' 
           onChange={e => {
@@ -46,7 +54,7 @@ class App extends Component {
             // but if we add it inside the setState function call as seen above il will work as intended.
             }
           }
-        />
+        /> */}
         <Cardlist monsters={/*this.state.monsters*/ filteredMonsters} >
         </Cardlist>
       </div>
