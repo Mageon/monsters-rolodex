@@ -1,9 +1,11 @@
-import React from 'react';
-
+import React from "react";
+import "./card.styles.css";
 export const Card = (props) => {
   return (
-    <div>
-      <h1>{props.monster.name}</h1>
+    <div className="card-container">
+      <img src={`https://robohash.org/${props.monster.id}?set=set2&size=150x150`} alt={`Monster ${props.monster.id}`} />
+      <h2>{props.monster.name}</h2>
+      <p>{props.monster.email}</p>
     </div>
-  )
+  );
 };
